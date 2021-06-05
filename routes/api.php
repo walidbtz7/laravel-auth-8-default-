@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::prefix('admin')->group(function () {
+    Route::resource('product', ProductController::class);
+    Route::get('countcat', [AdminController::class, 'categorie']);
+    Route::get('countprod', [AdminController::class, 'products']);
+    Route::get('categories', [AdminController::class, 'getGategories']);
+
+});
+

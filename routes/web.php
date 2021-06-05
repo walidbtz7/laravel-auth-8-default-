@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('admin')->group(function () {
+ Route::get('/product/add', [AdminController::class, 'addProduct']);
+ Route::get('/dashboard', [AdminController::class, 'dashboard']);
+ Route::get('/contact', [AdminController::class, 'contact']);
+
+
+});
+

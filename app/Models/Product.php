@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'id','serie','categorie_id','picture'
+        'id', 'serie', 'categorie_id', 'file'
     ];
     protected $primaryKey = 'id';
-    public function categorie(){
+    public function categorie()
+    {
         return $this->belongsTo(Category::class);
-
     }
 }

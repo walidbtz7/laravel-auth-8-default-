@@ -103,7 +103,7 @@
 
     	<div class="sidebar-wrapper" style="overflow: hidden;">
             <div class="logo">
-                <a href="{{ url('dashboard') }}" class="simple-text">
+                <a href="{{ url('admin/dashboard') }}" class="simple-text">
                     ELCIVIA ADMIN
                 </a>
             </div>
@@ -118,7 +118,7 @@
                 </li >
 
                 <li id='Stagaire'>
-                    <a href="{{ url('/admin/Ajoutproduit') }}">
+                    <a href="{{ url('admin/product/add') }}">
                         <i class="ti-package"></i>
                         <p>Ajouter Produit</p>
                     </a>
@@ -130,14 +130,7 @@
                         <p>Liste Produit</p>
                     </a>
                 </li>
-                @if( Auth::user() -> role == 'admin')
-                <li id='Utilisateur'>
-                    <a href="{{ url('user') }}">
-                        <i class="ti-text"></i>
-                        <p>Utilisateur</p>
-                    </a>
-                </li>
-                @endif
+
 
             </ul>
     	</div>

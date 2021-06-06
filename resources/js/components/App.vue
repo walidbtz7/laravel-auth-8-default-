@@ -78,7 +78,9 @@ export default {
       axios
         .post("http://127.0.0.1:8000/api/admin/product",formData)
         .then((res) => {
+
           console.log("le produit est bien ajouter");
+
         })
         .catch((error) => {
           console.log("le produit est ne pas ajouter");

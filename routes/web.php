@@ -18,14 +18,13 @@ use App\Http\Controllers\Admin\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::prefix('admin')->group(function () {
+    Route::get('/product/add', [AdminController::class, 'addProduct']);
+    Route::get('/dashboard', [AdminController::class, 'dashboard']);
+    Route::get('/produit', [AdminController::class, 'contact']);
 
+
+   });
 Auth::routes();
 
-Route::prefix('admin')->group(function () {
- Route::get('/product/add', [AdminController::class, 'addProduct']);
- Route::get('/dashboard', [AdminController::class, 'dashboard']);
- Route::get('/contact', [AdminController::class, 'contact']);
-
-
-});
 

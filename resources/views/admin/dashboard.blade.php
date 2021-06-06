@@ -5,8 +5,8 @@
     <body>
         <div class="container-xl">
 
-            <h3>I m  <b>dashboarde</b></h2>
-
+            <h3>Welcome <b>Admin</b></h2>
+             <dashboard />
         </div>
     </body>
 @endsection

@@ -22,9 +22,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::prefix('admin')->group(function () {
     Route::resource('product', ProductController::class);
-    Route::get('countcat', [AdminController::class, 'categorie']);
-    Route::get('countprod', [AdminController::class, 'products']);
-    Route::get('categories', [AdminController::class, 'getGategories']);
+    Route::get('countcat', [ProductController::class, 'categories']);
+    Route::get('countprod', [ProductController::class, 'products']);
+    Route::get('categories', [ProductController::class, 'getGategories']);
+    Route::get('contact', [ProductController::class, 'contact']);
 
 });
 

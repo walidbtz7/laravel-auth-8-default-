@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Http\Resources\CategoryResource;
 use App\Http\Resources\ProductResource;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Exception;
@@ -66,6 +68,26 @@ class ProductController extends Controller
                 "file" => $file
             ]);
         }
+    }
+    public function contact()
+    {
+        $contact = Contact::all();
+        return $contact;
+    }
+    public function categories()
+    {
+        $countCategories = Category::count();
+        return $countCategories;
+    }
+    public function products()
+    {
+        $countProducts = Product::count();
+        return $countProducts;
+    }
+    public function getGategories()
+    {
+        $categories = Category::all();
+        return CategoryResource::collection($categories);
     }
     /**
      * Display the specified resource.

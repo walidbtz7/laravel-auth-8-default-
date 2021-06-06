@@ -3,7 +3,7 @@
 @section('content')
 
     <body>
-        <div class="container-xl">
+        <div class="container">
 
             <h3>Ajout <b>Produit</b></h2>
             <Produit />

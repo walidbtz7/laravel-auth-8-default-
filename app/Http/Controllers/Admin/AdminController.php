@@ -5,26 +5,28 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function categories()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $countCategories = Category::count();
-        return $countCategories;
+        $this->middleware('auth');
     }
-    public function products()
-    {
-        $countProducts = Product::count();
-        return $countProducts;
-    }
-    public function getGategories()
-    {
-        $categories = Category::all();
-        return CategoryResource::collection($categories);
-    }
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
+
 
     public function addProduct()
     {
